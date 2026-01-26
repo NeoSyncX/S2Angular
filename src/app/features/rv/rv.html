@@ -1,0 +1,84 @@
+<header class="top-header">
+  <h1>Mes rendez-vous</h1>
+  <div class="header-actions">
+    <button class="btn-primary">Nouveau RV</button>
+  </div>
+</header>
+
+<div class="page-content">
+  <div class="filters-bar">
+    <div class="filter-group">
+      <label>Statut:</label>
+      <select class="filter-select">
+        <option>Tous</option>
+        <option>Confirmés</option>
+        <option>En attente</option>
+        <option>Annulés</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Période:</label>
+      <select class="filter-select">
+        <option>Ce mois</option>
+        <option>3 derniers mois</option>
+        <option>Cette année</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="appointments-list">
+    <div class="appointment-card confirmed">
+      <div class="appointment-date">
+        <div class="date-day">28</div>
+        <div class="date-month">Jan</div>
+      </div>
+      <div class="appointment-info">
+        <h3>Consultation générale</h3>
+        <p class="doctor">Dr. Martin Leblanc</p>
+        <p class="time">🕐 14:30</p>
+        <p class="location">📍 Cabinet médical - 123 Rue de la Santé</p>
+      </div>
+      <div class="appointment-status confirmed">Confirmé</div>
+      <div class="appointment-actions">
+        <button class="btn-outline">Modifier</button>
+        <button class="btn-danger">Annuler</button>
+      </div>
+    </div>
+
+    <div class="appointment-card pending">
+      <div class="appointment-date">
+        <div class="date-day">02</div>
+        <div class="date-month">Fév</div>
+      </div>
+      <div class="appointment-info">
+        <h3>Suivi cardiologique</h3>
+        <p class="doctor">Dr. Sophie Martin</p>
+        <p class="time">🕐 10:00</p>
+        <p class="location">📍 Clinique du Cœur - 456 Avenue Médicale</p>
+      </div>
+      <div class="appointment-status pending">En attente</div>
+      <div class="appointment-actions">
+        <button class="btn-outline">Modifier</button>
+        <button class="btn-danger">Annuler</button>
+      </div>
+    </div>
+
+    <div class="appointment-card cancelled">
+      <div class="appointment-date">
+        <div class="date-day">25</div>
+        <div class="date-month">Jan</div>
+      </div>
+      <div class="appointment-info">
+        <h3>Consultation dermatologie</h3>
+        <p class="doctor">Dr. Claire Dubois</p>
+        <p class="time">🕐 16:00</p>
+        <p class="location">📍 Centre dermatologique</p>
+        <p class="cancellation">Annulé: Indisponibilité médecin</p>
+      </div>
+      <div class="appointment-status cancelled">Annulé</div>
+      <div class="appointment-actions">
+        <button class="btn-primary">Reprendre</button>
+      </div>
+    </div>
+  </div>
+</div>

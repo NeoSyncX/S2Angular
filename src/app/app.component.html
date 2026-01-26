@@ -1,0 +1,45 @@
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">
+        <span class="logo-icon">🏥</span>
+        <span class="logo-text">MediCare</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active">
+        <span class="nav-icon">📊</span>
+        <span class="nav-text">Tableau de bord</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📅</span>
+        <span class="nav-text">Mes rendez-vous</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">➕</span>
+        <span class="nav-text">Demander RV</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">📋</span>
+        <span class="nav-text">Mes demandes</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="nav-icon">👤</span>
+        <span class="nav-text">Mon profil</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="user-profile">
+        <div class="user-avatar">👤</div>
+        <div class="user-info">
+          <div class="user-name">Marie Dupont</div>
+          <div class="user-role">Patient</div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>
