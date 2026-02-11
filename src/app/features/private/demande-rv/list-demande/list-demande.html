@@ -1,0 +1,71 @@
+
+<div class="list-container">
+  <div class="list-header">
+    <h2 >{{title}}</h2>
+    <button class="btn-primary" routerLink="/private/demande-rv/form">
+      <i class="ph ph-plus"></i> Nouvelle demande
+    </button>
+  </div>
+
+  <div class="filters-bar">
+    <div class="filter-group">
+      <label>Statut:</label>
+      <select class="filter-select">
+        <option>Tous</option>
+        <option>En attente</option>
+        <option>Validé</option>
+        <option>Refusé</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Toutes les spécialités</label>
+      <select class="filter-select">
+        <option>Cardiologie</option>
+        <option>Dermatologie</option>
+        <option>Ophtamologie</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Spécialité</th>
+          <th>Date Demandée</th>
+          <th>Heure</th>
+          <th>Statut</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for(demande of demandes; track demande.id) {
+        <tr>
+          <td>{{ demande.specialite }}</td>
+          <td>{{ demande.date | date:'dd/MM/yyyy' }}</td>
+          <td>{{ demande.heure }}</td>
+          <td>
+            <span class="status-badge" 
+                  [ngClass]="{
+                    'status-en-attente': demande.statut === 'En attente',
+                    'status-acceptee': demande.statut === 'Acceptée',
+                    'status-refusee': demande.statut === 'Refusée'
+                  }">
+              {{ demande.statut }}
+            </span>
+          </td>
+          <td>
+            <button class="btn-voir">Voir</button>
+          </td>
+        </tr>
+        } @empty {
+        <tr>
+          <td colspan="5" style="text-align: center; padding: 20px; color: var(--secondary);">
+            Aucune demande de rendez-vous trouvée.
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

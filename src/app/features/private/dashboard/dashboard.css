@@ -1,0 +1,269 @@
+/* --- VARIABLES & RESET --- */
+:root {
+    --primary: #4F46E5; /* Indigo moderne */
+    --primary-light: #EEF2FF;
+    --secondary: #10B981; /* Vert santé */
+    --bg-body: #F3F4F6;
+    --bg-sidebar: #FFFFFF;
+    --text-main: #1F2937;
+    --text-muted: #6B7280;
+    --border: #E5E7EB;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    background: white;
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.welcome-text h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.welcome-text p {
+    color: var(--text-muted);
+}
+
+.user-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0 2.5rem 2rem;
+}
+
+/* Cards */
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* Widget: Prochain RV */
+.next-appointment {
+    grid-column: span 2;
+    background: linear-gradient(135deg, var(--primary), #6366f1);
+    color: white;
+}
+
+.appointment-details {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.date-box {
+    background: rgba(255,255,255,0.2);
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.date-day { 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    display: block; 
+}
+
+.date-month { 
+    font-size: 0.9rem; 
+    text-transform: uppercase; 
+}
+
+.doc-info h3 { 
+    margin-bottom: 0.25rem; 
+    font-size: 1.2rem; 
+}
+
+.doc-info p { 
+    opacity: 0.9; 
+    font-size: 0.9rem; 
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.badge-white { 
+    background: white; 
+    color: var(--primary); 
+}
+
+/* Widget: Vitals */
+.vitals-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.vital-item {
+    background: var(--bg-body);
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.vital-item i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.vital-value { 
+    display: block; 
+    font-size: 1.25rem; 
+    font-weight: 700; 
+    color: var(--text-main); 
+}
+
+.vital-label { 
+    font-size: 0.8rem; 
+    color: var(--text-muted); 
+}
+
+/* Widget: Mes Demandes (Table) */
+.requests-table {
+    grid-column: span 3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th {
+    text-align: left;
+    padding: 1rem 0;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--border);
+}
+
+td {
+    padding: 1rem 0;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--bg-body);
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-pending { 
+    background: #FEF3C7; 
+    color: #D97706; 
+}
+
+.status-confirmed { 
+    background: #D1FAE5; 
+    color: #059669; 
+}
+
+/* Bouton CTA */
+.btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s;
+}
+
+.btn:hover { 
+    opacity: 0.9; 
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .dashboard-grid { 
+        grid-template-columns: 1fr; 
+    }
+    .next-appointment, .requests-table { 
+        grid-column: span 1; 
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .vitals-grid {
+        grid-template-columns: 1fr;
+    }
+}
